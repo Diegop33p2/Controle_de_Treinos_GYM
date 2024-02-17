@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Farmacia</title>
+
+</head>
+
+<body>
+
+  <h1> Farmacia </h1>
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container"><h1 class="display-4" >Farmacia</h1></div>
+    
+  </nav>
+  <div class="container" style="padding: 50px;">
+    
+    
+    <a href="{% url  'record_create' %}"><button type="button" class="btn btn-success">Adicionar Cliente</button></a>
+
+    </div>
+<div class="container">
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Data de Compra</th>
+      <th>Produto</th>
+      <th>Lote do Produto</th>
+      <th>Valor</th>
+      <th>Pagamento</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for record in records %}
+    <tr>
+      <td>{{ record.cliente }}</td>
+      <td>{{ record.data_compra }}</td>
+      <td>{{ record.produto }}</td>
+      <td>{{ record.lote_produto }}</td>
+      <td>{{ record.valor }}</td>
+      <td>{{ record.pagamento }}</td>
+      <td>
+        <a href="{% url 'record_update' record.pk %}">Editar</a>
+        <a href="{% url 'record_delete' record.pk %}">Deletar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+
+</html>
+
