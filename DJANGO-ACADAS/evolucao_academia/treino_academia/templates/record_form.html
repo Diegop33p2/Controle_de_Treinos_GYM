@@ -1,0 +1,11 @@
+<html>
+
+<h1>Create/Update Record</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+
+</html>

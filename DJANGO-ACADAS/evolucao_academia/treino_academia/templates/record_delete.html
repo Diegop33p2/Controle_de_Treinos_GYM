@@ -1,0 +1,12 @@
+
+<html>
+<h1>Deleçao de Dado</h1>
+
+<p>Are you sure you want to delete the record "{{ record.nome }}"?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Delete</button>
+</form>
+
+</html>

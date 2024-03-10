@@ -15,8 +15,12 @@ class Medidas(models.Model):
     pantu_esq = models.IntegerField()
     pantu_dir = models.IntegerField()
 
+    class Meta:
+        app_label = 'treino_academia'
+
     def __str__(self):
         return self.nome
 
 
+    
 

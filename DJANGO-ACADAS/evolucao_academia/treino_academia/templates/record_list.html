@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Medidas</title>
+
+  <style>
+    h1{
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1> Medidas Corpo </h1>
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container"><h1 class="display-4" >Dados</h1></div>
+    
+  </nav>
+  <div class="container" style="padding: 50px;">
+    
+    
+    <a href="{% url  'record_create' %}"><button type="button" class="btn btn-success">Adicionar Novas Medidas</button></a>
+
+    </div>
+<div class="container">
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr id="tab">
+      <th>Nome</th>
+      <th>Data da Medição</th>
+      <th>Peitoral</th>
+      <th>Braço Esquerdo</th>
+      <th>Braço Direito</th>
+      <th>Antebraço Esquerdo</th>
+      <th>Antebraço Direito</th>
+      <th>Gluteos</th>
+      <th>Coxa Esquerda</th>
+      <th>Coxa Direita</th>
+      <th>Abdomen</th>
+      <th>Panturilha Esquerda</th>
+      <th>Panturilha Direita</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for record in records %}
+    <tr>
+      <td>{{ record.nome }}</td>
+      <td>{{ record.data_medida }}</td>
+      <td>{{ record.peitoral }}</td>
+      <td>{{ record.braco_esq }}</td>
+      <td>{{ record.braco_dir }}</td>
+      <td>{{ record.antebraco_esq }}</td>
+      <td>{{ record.antebraco_dir }}</td>
+      <td>{{ record.gluteos }}</td>
+      <td>{{ record.coxa_esq }}</td>
+      <td>{{ record.coxa_dir }}</td>
+      <td>{{ record.abdomen }}</td>
+      <td>{{ record.pantu_esq }}</td>
+      <td>{{ record.pantu_dir }}</td>
+      <td class="bot">
+        <a href="{% url 'record_update' record.pk %}">Editar</a>
+        <a href="{% url 'record_delete' record.pk %}">Deletar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+
+</html>
+
