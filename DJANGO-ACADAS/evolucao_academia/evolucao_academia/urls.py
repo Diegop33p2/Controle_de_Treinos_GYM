@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from treino_academia import views
 
+
 urlpatterns = [
      path('', views.record_list, name='index'),  # Redirecionar para a lista de registros
     path('records/', views.record_list, name='record_list'),
@@ -9,3 +10,5 @@ urlpatterns = [
     path('records/update/<int:pk>/', views.record_update, name='record_update'),
     path('records/delete/<int:pk>/', views.record_delete, name='record_delete'),
 ]
+
+
