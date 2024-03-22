@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* tabela */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,7 +52,6 @@ tr:hover {
   padding: 20px;
   border-radius: 20px;
 }
-
 /* cabeça */
 .logo img{
   width: 100px; 
@@ -67,7 +66,6 @@ tr:hover {
    border-bottom: 1px solid #000;
    padding: 10px;
 }
-
 .header h1 {
    flex: 1; /* Ocupa o restante do espaço disponível */
    text-align: center;
@@ -83,7 +81,6 @@ tr:hover {
    height: 70px;
    text-align: center;
 }
-
 .cabecalho img{
  float: left;
  padding: 10px;
@@ -93,4 +90,33 @@ tr:hover {
 .cabecalho p{
  text-align:center;
  color: white;
+}
+/* formulario */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #0004ff;
+  color: white;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: blue;
 }

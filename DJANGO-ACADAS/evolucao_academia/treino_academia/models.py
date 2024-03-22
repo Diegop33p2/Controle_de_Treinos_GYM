@@ -22,5 +22,6 @@ class Medidas(models.Model):
         return self.nome
 
 
+
     
 

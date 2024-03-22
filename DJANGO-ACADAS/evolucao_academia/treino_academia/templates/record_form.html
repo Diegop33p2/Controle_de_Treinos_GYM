@@ -1,11 +1,33 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Update Record</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
-<h1>Create/Update Record</h1>
-
+<body>
+  <header class="header">
+    <div class="logo">
+     <img src="{% static 'imagens/fitness.png' %}" alt="Logo">
+    </div>
+    <h1>Create/Update Record</h1>
+    </header>
+    
+<main>
 <form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Save</button>
-</form>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</main>
 
+<footer class="cabecalho">
+  <a> <img src="{% static 'imagens/gym.png' %}" alt="Logo"> </a>
+ <p>Diegop33</p>
+</footer>
+
+</body>
 </html>
