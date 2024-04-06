@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinos</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+</head>
+<body>
+  
+  <header class="header">
+  <div class="logo">
+   <img src="{% static 'imagens/fitness.png' %}" alt="Logo">
+  </div>
+  <h1>Treinos</h1>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="add-button">
+      <a href="{% url  'pernas_create' %}"><button type="button">Adicionar Novo Treino</button></a>
+    </div>
+ <table>
+      <thead>
+        <tr>
+          <th>Data_treino</th>
+          <th>Agachamento</th>
+          <th>Leg press</th>
+          <th>Extensora</th>
+          <th>Rack</th>
+          <th>Bulgaro</th>
+          <th>Stiff</th>
+          <th>Cadeira Flexora</th>
+          <th>Mesa Flexora</th>
+          <th>Elevação Pelvica</th>
+          <th>Aga_Sumô</th>
+          <th>Abdutora</th>
+          <th>Adutora</th>
+          <th>Panturilha</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pernas in pernas %}
+        <tr>
+          <td>{{ pernas.data_treino }}</td>
+          <td>{{ pernas.agachamneto }}</td>
+          <td>{{ pernas.leg_press }}</td>
+          <td>{{ pernas.extensora }}</td>
+          <td>{{ pernas.rack }}</td>
+          <td>{{ pernas.bulgaro }}</td>
+          <td>{{ pernas.stiff }}</td>
+          <td>{{ pernas.cadeira_flexora }}</td>
+          <td>{{ pernas.mesa_flexora }}</td>
+          <td>{{ pernas.ele_pelvica}}</td>
+          <td>{{ pernas.aga_sumo }}</td>
+          <td>{{ pernas.abdutora }}</td>
+          <td>{{ pernas.adutora }}</td>
+          <td>{{ pernas.panturilha }}</td>
+          <td class="action-links">
+            <a href="{% url 'pernas_update' pernas.pk %}">Editar</a>
+            <a href="{% url 'pernas_delete' pernas.pk %}">Deletar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  </main>
+   
+  <footer class="cabecalho">
+    <a> <img src="{% static 'imagens/gym.png' %}" alt="Logo"> </a>
+   <p>Diegop33</p>
+  </footer>
+</body>
+</html>
