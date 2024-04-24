@@ -1,4 +1,4 @@
-<h1 align="center"> Treinos_DP33 🤖</h1>
+<h1 align="center"> Treinos_DP33 </h1>
 <div align="center">
   
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue "/>
@@ -7,22 +7,22 @@
 </div>
 
 
-# Índices 🗂
+# Índices 
 * [Sobre](#sobre-)
 * [Screenshots](#screenshots-)
 * [Como usar](#como-usar-)
 
 
-# Sobre ☄
+# Sobre 
 
 Repositório para guardar o código fonte de uma ferramenta para anotar treinos e medidas.<br>
 
-# Screenshots 📸
+# Screenshots 
 <div display="inline" align="center">
 
 </div> <br>
 
-# Como usar 💻
+# Como usar 
 
 
 <br>
