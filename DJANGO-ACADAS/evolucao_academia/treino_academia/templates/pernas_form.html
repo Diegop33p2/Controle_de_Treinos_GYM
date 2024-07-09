@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create/Update Record</title>
+    <title>Create/Update Treino de Pernas</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
@@ -16,13 +16,70 @@
     <h1>Create/Update Record</h1>
     </header>
     
-<main>
-<form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-</main>
+<section>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_data_treino">Data do Treino - Treino de Pernas:</label>
+        {{ form.data_treino }}
+    </div>
+    <div>
+        <label for="id_data_treino">Agachamento:</label>
+        {{ form.agachamneto }}
+    </div>
+    <div>
+        <label for="id_leg_press">Leg press:</label>
+        {{ form.leg_press }}
+    </div>
+    <div>
+        <label for="id_extensora">Extensora:</label>
+        {{ form.extensora }}
+    </div>
+    <div>
+        <label for="id_rack">Rack:</label>
+        {{ form.rack }}
+    </div>
+    <div>
+        <label for="id_bulgaro">Bulgaro:</label>
+        {{ form.bulgaro }}
+    </div>
+    <div>
+      <label for="id_stiff">Stiff:</label>
+      {{ form.stiff }}
+    </div>
+    <div>
+      <label for="id_cadeira">Cadeira Flexora:</label>
+      {{ form.cadeira_flexora }}
+    </div>  
+    <div>
+      <label for="id_mesa">Mesa Flexora:</label>
+      {{ form.mesa_flexora }}
+    </div>
+    <div>
+      <label for="id_data_treino">Elevação Pelvica:</label>
+      {{ form.ele_pelvica }}
+    </div>
+    <div>
+      <label for="id_data_treino">Agachamento Sumô:</label>
+      {{ form.aga_sumo }}
+    </div>
+    <div>
+      <label for="id_data_treino">Abdutora:</label>
+      {{ form.abdutora }}
+    </div> 
+    <div>
+      <label for="id_data_treino">Adutora:</label>
+      {{ form.adutora }}
+    </div>  
+    <div>
+      <label for="id_pantu">Panturilha:</label>
+      {{ form.panturilha }}
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+</section> 
+
 
 <footer class="cabecalho">
   <a> <img src="{% static 'imagens/gym.png' %}" alt="Logo"> </a>

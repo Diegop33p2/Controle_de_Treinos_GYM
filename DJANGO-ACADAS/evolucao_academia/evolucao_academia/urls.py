@@ -15,6 +15,12 @@ urlpatterns = [
     path('pernas/create/', views.pernas_create, name='pernas_create'),
     path('pernas/update/<int:pk>/', views.pernas_update, name='pernas_update'),
     path('pernas/delete/<int:pk>/', views.pernas_delete, name='pernas_delete'),
+
+    path('costas/', views.costas_list, name='costas_list'),
+    path('costas/create/', views.costas_create, name='costas_create'),
+    path('costas/update/<int:pk>/', views.costas_update, name='costas_update'),
+    path('costas/delete/<int:pk>/', views.costas_delete, name='costas_delete')
+
 ]
 
 

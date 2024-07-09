@@ -42,6 +42,23 @@ class Pernas(models.Model):
     
     def __str__(self):
         return f'{self.data_treino} - Treino de Pernas' 
-    # def __str__(self):
-    #     return self.data_treino
 
+
+class Costas(models.Model):
+    data_treino = models.DateField()
+    barra = models.CharField(max_length=100, blank=True)
+    pulley_frontal = models.CharField(max_length=100, blank=True)
+    remada_baixa = models.CharField(max_length=100, blank=True)
+    remada_cur = models.CharField(max_length=100, blank=True)
+    pull_aro = models.CharField(max_length=100, blank=True)
+    remada_uni = models.CharField(max_length=100, blank=True)
+    crucifixo_inv = models.CharField(max_length=100, blank=True)
+    remada_cav = models.CharField(max_length=100, blank=True)
+    pull_down = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        app_label = 'treino_academia'
+        db_table = 'Treino_Costas'
+    
+    def __str__(self):
+        return f'{self.data_treino} - Treino de Costas' 

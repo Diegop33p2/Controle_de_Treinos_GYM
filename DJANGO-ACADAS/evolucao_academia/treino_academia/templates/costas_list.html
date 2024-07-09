@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinos</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+  
+  <header class="header">
+  <div class="logo">
+   <img src="{% static 'imagens/fitness.png' %}" alt="Logo">
+  </div>
+  <h1>Treinos</h1>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      -Treinos-
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Inicio</a></li>
+      <li><a class="dropdown-item" href="#">Treino de Pernas</a></li>
+      <li><a class="dropdown-item" href="#">Treino de Peito</a></li>
+    </ul>
+  </div>
+
+  </header>
+
+  <main>
+
+    <div class="container">
+      <div class="add-button">
+        <a href="{% url  'costas_create' %}"><button type="button">Adicionar Novo Treino de Costas</button></a>
+      </div>
+   <table class="tabee">
+        <thead>
+          <tr>
+            <th>Data_treino</th>
+            <th>Barra Fixa</th>
+            <th>Pulley Frontal</th>
+            <th>Remada Baixa</th>
+            <th>Remada Curvada</th>
+            <th>Pull Around</th>
+            <th>Remada Unilateral</th>
+            <th>Crucifixo Inverso</th>
+            <th>Remada Cavalinho</th>
+            <th>Pull Down</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for costas in costas %}
+          <tr>
+            <td>{{ costas.data_treino }}</td>
+            <td>{{ costas.barra }}</td>
+            <td>{{ costas.pulley_frontal }}</td>
+            <td>{{ costas.remada_baixa }}</td>
+            <td>{{ costas.remada_cur }}</td>
+            <td>{{ costas.pull_aro }}</td>
+            <td>{{ costas.remada_uni }}</td>
+            <td>{{ costas.crucifixo_inv }}</td>
+            <td>{{ costas.remada_cav }}</td>
+            <td>{{ costas.pull_down }}</td>
+            <td class="action-links">
+              <a href="{% url 'costas_update' costas.pk %}">Editar</a>
+              <a href="{% url 'costas_delete' costas.pk %}">Deletar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+</main>
+
+  <footer class="cabecalho">
+    <a> <img src="{% static 'imagens/gym.png' %}" alt="Logo"> </a>
+   <p>Diegop33</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

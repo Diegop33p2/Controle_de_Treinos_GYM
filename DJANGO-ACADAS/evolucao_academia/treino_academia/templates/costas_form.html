@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Update Treino de Costas</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+     <img src="{% static 'imagens/fitness.png' %}" alt="Logo">
+    </div>
+    <h1>Create/Update Treino de Costas</h1>
+    </header>
+    
+<section>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_costas">Data do Treino - Treino de Costas:</label>
+        {{ form.data_treino }}
+    </div>
+    <div>
+        <label for="id_costas">Barra Fixa/Graviton:</label>
+        {{ form.barra }}
+    </div>
+    <div>
+        <label for="id_costas">Pulley Frente:</label>
+        {{ form.pulley_frontal }}
+    </div>
+    <div>
+        <label for="id_costas">Remada Baixa:</label>
+        {{ form.remada_baixa }}
+    </div>
+    <div>
+        <label for="id_costas">Remada Curvada:</label>
+        {{ form.remada_cur }}
+    </div>
+    <div>
+        <label for="id_costas">Pull Around:</label>
+        {{ form.pull_aro }}
+    </div>
+    <div>
+      <label for="id_costas">Remada Unilateral/Serrote:</label>
+      {{ form.remada_uni }}
+    </div>
+    <div>
+      <label for="id_costas">Crucifixo Inverso:</label>
+      {{ form.crucifixo_inv }}
+    </div>  
+    <div>
+      <label for="id_costas">Remada Cavalinho:</label>
+      {{ form.remada_cav }}
+    </div>
+    <div>
+      <label for="id_costas">Pull Down:</label>
+      {{ form.pull_down }}
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+</section> 
+
+
+<footer class="cabecalho">
+  <a> <img src="{% static 'imagens/gym.png' %}" alt="Logo"> </a>
+ <p>Diegop33</p>
+</footer>
+
+</body>
+</html>
+
